@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SignUp from './Components/AuthComponents/SignUp/SignUp';
 import SignIn from './Components/AuthComponents/SignIn/SignIn';
+import UserDetails from './Components/AuthComponents/UserDetails/UserDetails';
 import Header from './Components/Header/Header';
 import { Auth } from './firebase';
 import Home from './Components/Home/Home';
@@ -34,6 +35,9 @@ const App = () => {
                     </Route>
                     <Route path='/signin'>
                         <SignIn />
+                    </Route>
+                    <Route path='/user-details'>
+                        <UserDetails />
                     </Route>
                     <Route>
                         <ErrorNotFound />
