@@ -70,7 +70,7 @@ const UserDetails = () => {
 
             setCookie('db_access_token', signUpWithDb.data.data.jwt_token, 15);
             setCookie('firebase_access_Token', null, 1);
-            toast.success('Signin Successful');
+            toast('Signin Successful');
             history.push('/');
         } catch (error) {
             toast.error('Failed to Signup ,' + error)
@@ -93,7 +93,7 @@ const UserDetails = () => {
                                 we have fetched this from Google
                             </Typography>
                             <br />
-                            <img src="./images/default_pic.png" style={{ maxWidth: '300' }} />
+                            <img src="./images/default_pic.png" alt="default-pic" style={{ maxWidth: '300' }} />
                             <br />
                             <form onSubmit={registerUserWithDB} className={classes.form} noValidate>
                                 <TextField className={classes.formField} variant="filled" margin="normal" required fullWidth type="text" label="First Name"

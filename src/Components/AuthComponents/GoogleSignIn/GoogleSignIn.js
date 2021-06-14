@@ -29,7 +29,7 @@ const GoogleSignIn = () => {
             }
 
             setCookie('db_access_token', signInData.data.data.jwt_token, 15);
-            toast.success('Signin Successful');
+            toast('Signin Successful');
             history.push('/');
         } catch (error) {
             toast.error('Failed to Signup ,' + error)
@@ -77,7 +77,7 @@ const GoogleSignIn = () => {
                             className={classes.googleButton}
                             onClick={googleLoginHandler}
                         >
-                            <img src="./images/svgs/gmail-logo.svg" style={{ maxWidth: '46px', maxHeight: '46px' }} />
+                            <img src="./images/svgs/gmail-logo.svg" alt="google-logo" style={{ maxWidth: '46px', maxHeight: '46px' }} />
                         </button>
                     </Grid>
                 </Grid>

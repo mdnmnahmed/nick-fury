@@ -20,7 +20,7 @@ const Therapist = () => {
                                     <Grid container spacing={0}>
                                         <Grid item xs={2}>
                                             <div className={classes.peopleCard}>
-                                                <img src="./images/default_pic.png" style={{ width: '40px' }} />
+                                                <img src="./images/default_pic.png" alt="default-pic" style={{ width: '40px' }} />
                                             </div>
                                         </Grid>
                                         <Grid item xs={6}>
@@ -39,9 +39,9 @@ const Therapist = () => {
                                         </Grid>
                                         <Grid item xs={3}>
                                             <div className={classes.peopleCard}>
-                                                <img src="./images/svgs/heart-active.svg" style={{ marginLeft: '15px' }} />
+                                                <img src="./images/svgs/heart-active.svg" alt="heart" style={{ marginLeft: '15px' }} />
                                                 <br /> <br />
-                                                <Link to='/'><img src="./images/svgs/book-button.svg" /></Link>
+                                                <Link to='/therapist'><img src="./images/svgs/book-button.svg" alt="book-button" /></Link>
                                             </div>
                                         </Grid>
                                     </Grid>

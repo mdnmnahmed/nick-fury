@@ -40,7 +40,7 @@ const SignUp = () => {
             }
 
             setCookie('db_access_token', signInData.data.data.jwt_token, 15);
-            toast.success('SignIn Successful');
+            toast('SignIn Successful');
             history.push('/');
         } catch (error) {
             toast.error('Failed to Signup ,' + error)
@@ -61,8 +61,6 @@ const SignUp = () => {
         try {
             setSignUpLoader(true);
             const signupData = await Auth.createUserWithEmailAndPassword(email, password);
-            console.log(signupData);
-
             if (signupData) {
                 const firebaseAccessToken = await Auth.currentUser.getIdToken(true).then((token) => token);
                 if (firebaseAccessToken) {
@@ -90,7 +88,7 @@ const SignUp = () => {
                     <Container component="main" maxWidth="xs">
                         <CssBaseline />
                         <div className={classes.paper}>
-                            <img src="./images/svgs/character_lappy_support.svg" style={{ maxWidth: '345' }} />
+                            <img src="./images/svgs/character_lappy_support.svg"  alt="character-svg" style={{ maxWidth: '345' }} />
                             <Typography component="h1" variant="h5">
                                 Welcome to muzo
                             </Typography>

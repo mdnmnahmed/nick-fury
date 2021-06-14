@@ -8,7 +8,7 @@ const ErrorNotFound = () => {
                 Error 404 Page Not found
             </h1>
             <br />
-            <img src="./images/svgs/character_lappy.svg" style={{ width:'30%', maxWidth: '345' }} />
+            <img src="./images/svgs/character_lappy.svg" alt="character-svg" style={{ width: '30%', maxWidth: '345' }} />
 
             <Link to="/"><h1 style={{ color: 'pink' }}>Go to Home</h1></Link>
         </div>

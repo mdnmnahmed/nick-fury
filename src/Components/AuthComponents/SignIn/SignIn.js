@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Grid, Box, Typography, Container } from '@material-ui/core';
+import { Button, CssBaseline, TextField, Grid, Typography, Container } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { Auth, googleLoginProvider } from '../../../firebase';
+import { Auth } from '../../../firebase';
 import Loader from '../../Layouts/Loader';
 import BigLoader from '../../Layouts/BigLoader';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
@@ -36,7 +36,6 @@ const SignIn = () => {
             }
 
             const signInData = await axios.post('https://b1.wealth42.com/nick-fury/api/firebase-view', firebaseIdToken);
-            console.log('signInData: ', signInData);
 
             if (signInData.data.status && signInData.data.status == 'ERROR') {
                 throw signInData.data.message.substring(0, 80) + '...';
@@ -44,7 +43,7 @@ const SignIn = () => {
 
             setCookie('db_access_token', signInData.data.data.jwt_token, 15);
             setSignInLoader(false);
-            toast.success('Signin Successful');
+            toast('Signin Successful');
             history.push('/');
         } catch (error) {
             toast.error('Failed to Signup ,' + error)
@@ -66,9 +65,7 @@ const SignIn = () => {
         try {
             setSignInLoader(true);
             const signInResponse = await Auth.signInWithEmailAndPassword(email, password);
-            console.log('signInResponse ', signInResponse);
             const firebaseAccessToken = await Auth.currentUser.getIdToken(true).then((token) => token);
-            console.log('firebaseAccessToken: ', firebaseAccessToken);
             userLoginHandler(firebaseAccessToken);
         } catch (error) {
             toast.error('Failed to SignIn ,' + error);
@@ -85,7 +82,7 @@ const SignIn = () => {
                     <Container component="main" maxWidth="xs">
                         <CssBaseline />
                         <div className={classes.paper}>
-                            <img src="./images/svgs/character_lappy.svg" style={{ maxWidth: '345' }} />
+                            <img src="./images/svgs/character_lappy.svg" alt="character-svg" style={{ maxWidth: '345' }} />
                             <Typography component="h1" variant="h5">
                                 Welcome back to mozo
                             </Typography>

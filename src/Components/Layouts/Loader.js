@@ -1,7 +1,7 @@
 const Loader = () => {
     return (
         <>
-            <img src="./images/svgs/loading.svg" />
+            <img src="./images/svgs/loading.svg" alt="loading" />
         </>
     );
 }

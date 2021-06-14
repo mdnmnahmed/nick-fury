@@ -20,7 +20,7 @@ const Footer = () => {
     const [value, setValue] = React.useState(0);
 
     return (
-        <footer class="my-sticky-footer" style={{
+        <footer className="my-sticky-footer" style={{
             textAlign: 'center',
             background: '#42474E',
             position: 'sticky',
@@ -37,7 +37,7 @@ const Footer = () => {
                 <BottomNavigationAction
                     icon={
                         <NavLink to="/">
-                            <img src="./images/svgs/footer-nav/home.svg" />
+                            <img src="./images/svgs/footer-nav/home.svg" alt="home" />
                         </NavLink>
                     }
                 />
@@ -45,7 +45,7 @@ const Footer = () => {
                 <BottomNavigationAction
                     icon={
                         <NavLink to="/therapist">
-                            <img src="./images/svgs/footer-nav/calender.svg" />
+                            <img src="./images/svgs/footer-nav/calender.svg" alt="calender" />
                         </NavLink>
                     }
                 />
@@ -53,7 +53,7 @@ const Footer = () => {
                 <BottomNavigationAction
                     icon={
                         <NavLink to="/chat">
-                            <img src="./images/svgs/footer-nav/chat.svg" />
+                            <img src="./images/svgs/footer-nav/chat.svg" alt="chat" />
                         </NavLink>
                     }
                 />
