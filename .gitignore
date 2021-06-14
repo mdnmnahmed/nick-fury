@@ -3,6 +3,10 @@
 # configs
 .env
 
+# firebase-deployment
+.firebaserc
+firebase.json
+
 # dependencies
 /node_modules
 /.pnp
