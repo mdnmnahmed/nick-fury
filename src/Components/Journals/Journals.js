@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Card, CardContent, CardMedia, Grid, Typography, Container } from '@material-ui/core';
+import { Grid, Container } from '@material-ui/core';
 import BaseLayout from '../Layouts/BaseLayout';
 import useStyles from './journalStyles';
 import { useSelector } from 'react-redux';

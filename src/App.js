@@ -8,25 +8,14 @@ import UserDetails from './Components/AuthComponents/UserDetails/UserDetails';
 import { Auth } from './firebase';
 import ErrorNotFound from './Components/ErrorNotFound/ErrorNotFound';
 import Journals from './Components/Journals/Journals';
+import AddNote from './Components/Journals/AddNote/AddNote';
 import Therapist from './Components/Therapist/Therapist';
 import Chat from './Components/Chat/Chat';
 
 const App = () => {
-    const [user, setUser] = useState(null);
-
-    /**
-     * Checking user's Authorization
-     */
-    useEffect(() => {
-        Auth.onAuthStateChanged(user => user ? setUser(user) : setUser(null));
-    }, []);
-
     return (
         <>
-
             <BrowserRouter >
-                {/* {user && <Header />} */}
-
                 <Switch>
                     <Route path='/signup'>
                         <SignUp />
@@ -45,6 +34,9 @@ const App = () => {
                     </Route>
                     <Route path='/chat'>
                         <Chat />
+                    </Route>
+                    <Route path='/add-note'>
+                        <AddNote />
                     </Route>
                     <Route>
                         <ErrorNotFound />

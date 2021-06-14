@@ -29,6 +29,11 @@ const OptionButton = () => {
         history.push('/signin');
     }
 
+    const goToAddNote = () => {
+        handleClose();
+        history.push('/add-note');
+    }
+
     return (
         <div>
             <IconButton
@@ -53,8 +58,8 @@ const OptionButton = () => {
                     },
                 }}
             >
-                <MenuItem onClick={handleClose}>
-                    + Create Journal
+                <MenuItem onClick={goToAddNote}>
+                    + Add Note
                 </MenuItem>
                 <MenuItem onClick={logoutHandler}>
                     Logout

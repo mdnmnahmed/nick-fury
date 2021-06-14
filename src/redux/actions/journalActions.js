@@ -1,12 +1,15 @@
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Auth } from '../../firebase';
-import { setCookie } from '../../helpers/CookiesHelper';
+import { getCookie, setCookie } from '../../helpers/CookiesHelper';
 import FetchAPIData from '../../helpers/FetchAPIData';
 import { GET_JOURNALS, ADD_JOURNAL } from './actionTypes';
 
 export const getJournalData = () => async dispatch => {
     try {
+        if (!getCookie('db_access_token')) {
+            return;
+        }
         const journalsData = await FetchAPIData('get', '/home-view');
         console.log('getJournalsData: ', journalsData);
 

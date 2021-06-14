@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Grid, Typography, Container } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Grid, Typography } from '@material-ui/core';
 import useStyles from './journalStyles';
 
 const JournalCard = ({ journal }) => {

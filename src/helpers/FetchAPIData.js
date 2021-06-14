@@ -54,7 +54,7 @@ const FetchAPIData = async (method = 'post', endpoint, data = null) => {
             url: BASE_URL + endpoint,
             headers: {
                 'Content-Type': 'application/json',
-                'access_token': accessToken
+                'Authorization': accessToken
             },
         };
     }
@@ -64,7 +64,7 @@ const FetchAPIData = async (method = 'post', endpoint, data = null) => {
             if (error.response) {
                 if (error.response.data.msg) {
                     toast.error(error.response.data.msg);
-                    console.error('Error occur in Fetch api: ', error.response.data.msg);
+                    // console.error('Error occur in Fetch api: ', error.response.data.msg);
                 }
             }
         });
