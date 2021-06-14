@@ -10,9 +10,9 @@
 
 /**
  * Set Cookie Value
- * @param {string} name - name of the Cookie
- * @param {*} value - value of the Cookie
- * @param {*} days - Expiry date
+ * @param {String} name - name of the Cookie
+ * @param {String} value - value of the Cookie
+ * @param {String} days - Expiry date
  */
 export const setCookie = (name, value, days) => {
     var expires = "";

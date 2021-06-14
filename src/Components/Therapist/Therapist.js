@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Grid, Typography, Container } from '@material-ui/core';
+import { Card, Grid, Typography, Container } from '@material-ui/core';
 import BaseLayout from '../Layouts/BaseLayout';
 import useStyles from './therapistStyles';
 import { Link } from 'react-router-dom';
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const therapists = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const Therapist = () => {
     const classes = useStyles();
 
@@ -14,15 +14,9 @@ const Therapist = () => {
                 <Container style={{ minHeight: '90vh' }} className={classes.cardGrid} maxWidth="md">
                     {/* End hero unit */}
                     <Grid container spacing={4}>
-                        {cards.map((card) => (
-                            <Grid item key={card} xs={12} sm={6} md={4}>
+                        {therapists.map((therapist) => (
+                            <Grid item key={therapist} xs={12} sm={6} md={4}>
                                 <Card className={classes.card}>
-                                    {/* <CardMedia
-                                        className={classes.cardMedia}
-                                        image="./images/svgs/talking-characters.svg"
-                                        title="Image title"
-                                    /> */}
-
                                     <Grid container spacing={0}>
                                         <Grid item xs={2}>
                                             <div className={classes.peopleCard}>

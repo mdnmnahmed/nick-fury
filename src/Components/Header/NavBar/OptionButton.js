@@ -7,13 +7,7 @@ import { Auth } from '../../../firebase';
 import { useHistory } from 'react-router-dom';
 import { setCookie } from '../../../helpers/CookiesHelper';
 
-const options = [
-    '+ Create Journal',
-    'Logout',
-];
-
 const ITEM_HEIGHT = 48;
-
 const OptionButton = () => {
     const history = useHistory();
 
@@ -59,7 +53,6 @@ const OptionButton = () => {
                     },
                 }}
             >
-
                 <MenuItem onClick={handleClose}>
                     + Create Journal
                 </MenuItem>
