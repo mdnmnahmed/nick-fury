@@ -11,7 +11,7 @@ const Therapist = () => {
     return (
         <>
             <BaseLayout>
-                <Container style={{ minHeight: '100vh' }} className={classes.cardGrid} maxWidth="md">
+                <Container style={{ minHeight: '90vh' }} className={classes.cardGrid} maxWidth="md">
                     {/* End hero unit */}
                     <Grid container spacing={4}>
                         {cards.map((card) => (

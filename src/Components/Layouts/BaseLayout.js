@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BigLoader from '../Layouts/BigLoader';
 import { getCookie } from '../../helpers/CookiesHelper';
-import Journals from '../Journals/Journals';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { useDispatch } from 'react-redux';
+import { getJournalData } from '../../redux/actions/journalActions';
 
 const BaseLayout = ({ children }) => {
     const history = useHistory();
+    const dispatch = useDispatch();
     const [componentLoader, setComponentLoader] = useState(true);
 
     /**
@@ -16,6 +18,7 @@ const BaseLayout = ({ children }) => {
     useEffect(() => {
         if (getCookie('db_access_token')) {
             setComponentLoader(false);
+            
         } else {
             history.push('/signup');
         }

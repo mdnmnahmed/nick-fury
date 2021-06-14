@@ -24,6 +24,7 @@ const App = () => {
 
     return (
         <>
+
             <BrowserRouter >
                 {/* {user && <Header />} */}
 

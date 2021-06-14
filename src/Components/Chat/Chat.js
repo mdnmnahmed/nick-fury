@@ -5,7 +5,7 @@ const Chat = () => {
     return (
         <>
             <BaseLayout>
-                <div align="center" style={{ minHeight: '100vh' }}>
+                <div align="center" style={{ minHeight: '80vh' }}>
                     <h3>Chats</h3>
                 </div>
             </BaseLayout>

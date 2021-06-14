@@ -1,0 +1,5 @@
+export const SET_PROFILE_DATA = 'SET_PROFILE_DATA';
+export const RESET_PROFILE_DATA = 'RESET_PROFILE_DATA';
+
+export const GET_JOURNALS = 'GET_JOURNALS';
+export const ADD_JOURNAL = 'ADD_JOURNALS';

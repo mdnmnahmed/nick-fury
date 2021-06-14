@@ -43,7 +43,7 @@ const FetchAPIData = async (method = 'post', endpoint, data = null) => {
             url: BASE_URL + endpoint,
             headers: {
                 'Content-Type': 'application/json',
-                'access_token': accessToken
+                'Authorization': accessToken
             },
         };
     }
