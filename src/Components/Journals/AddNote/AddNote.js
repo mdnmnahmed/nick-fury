@@ -5,12 +5,14 @@ import useStyles from './addNoteStyles';
 import { toast } from 'react-toastify';
 import FetchAPIData from '../../../helpers/FetchAPIData';
 import { useHistory } from 'react-router-dom';
+import Loader from '../../Layouts/Loader';
 
 const AddNote = () => {
     const classes = useStyles();
     const history = useHistory();
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+    const [addNoteLoader, setAddNoteLoader] = useState(false);
 
     const addNoteHandler = async (event) => {
         event.preventDefault();
@@ -19,6 +21,8 @@ const AddNote = () => {
             toast.error('Enter Title & Description');
             return;
         }
+
+        setAddNoteLoader(true);
 
         try {
             const newNoteData = {
@@ -29,11 +33,12 @@ const AddNote = () => {
             const noteResponse = await FetchAPIData('post', '/home-view', newNoteData);
             if (noteResponse.data.status == 'OK') {
                 toast(title + ' - Note Saved');
+                setAddNoteLoader(false);
                 history.push('/');
             } else {
+                setAddNoteLoader(false);
                 throw 'Error with Database'
             }
-
         } catch (error) {
             toast.error('Failed to Add Note, ', error);
         }
@@ -56,7 +61,7 @@ const AddNote = () => {
                             />
                             <Grid container spacing={0} direction="column" alignItems="center" justify="center" style={{ paddingTop: '50%' }}>
                                 <Button type="submit" variant="container" color="" className={classes.submit}>
-                                    Save
+                                    Save {addNoteLoader && <Loader />}
                                 </Button>
                             </Grid>
                         </form>
